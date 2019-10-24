@@ -1,0 +1,33 @@
+<html lang="pt">
+<head>
+  <title>Pessoas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    
+    {% if pessoa %}
+    <h1>Atualizar Registro</h1>
+    {% else %}
+    <h1>Novo Registro </h1>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </form>    
+   
+    {% if pessoa %}        
+    <a class="btn btn-danger" href="{% url 'delete_pessoas' pessoa.id %}">Excluir</a>
+    {% endif %} 
+  </div>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+#Criar um Projeto
+
+pip3 install django
+
+django-admin startproject project .
+
+django-admin startapp pessoas
+
+#Ao criar um model execute para criar a migrate
+
+python manage.py makemigrations
+
+#para executar as migrate pendentes 
+
+python manage.py migrate
+
+# para rodar applicacao
+
+python manage.py runserver
+
+#Criar superusuario
+
+python manage.py createsuperuser

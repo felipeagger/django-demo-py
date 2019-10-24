@@ -1,0 +1,52 @@
+<html lang="pt">
+<head>
+  <title>Pessoas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+  <h2>Cadastro de Pessoas</h2>
+  <h5>CRUD com Python, Django e MySQL</h5>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Telefone</th>
+        <th>Saldo Bancario</th>
+        <th>Operações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {% for pessoa in pessoas %}
+      <tr>
+        <td> {{ pessoa.nome }} </td>
+        <td> {{ pessoa.idade }} </td>
+        <td> {{ pessoa.telefone }} </td>
+        <td> {{ pessoa.saldo_bancario }} </td>
+        
+        <td> <a class="btn btn-primary btn-rounded" 
+            href="{% url 'update_pessoas' pessoa.id %}" >Editar</a>
+        </td>
+      </tr>
+      {% endfor %} 
+      
+    </tbody>
+    </table>
+
+    <br>
+
+    <a class="btn btn-default" href="{% url 'create_pessoas' %}">Nova Pessoa</a>
+</div>
+
+
+</body>
+</html>
