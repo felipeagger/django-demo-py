@@ -18,6 +18,7 @@ python manage.py migrate
 
 python manage.py runserver
 
-#Criar superusuario
+#Criar superusuario (painel de gerenciamento do Django)
 
 python manage.py createsuperuser
+
